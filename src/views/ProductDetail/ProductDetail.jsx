@@ -11,7 +11,6 @@ export default function ProductDetail() {
   const productInformation = products.find(
     (product) => product.id === parseInt(id)
   );
-  console.log(productInformation);
 
   return (
     <article className={Style["article__detailView"]}>

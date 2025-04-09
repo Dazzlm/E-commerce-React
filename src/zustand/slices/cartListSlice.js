@@ -11,33 +11,20 @@ export const createCartList = (set) => ({
         }));
     },
 
-
-
     addCart: (id, quantity) => {
         set((state) => {
         const existingItem = state.cartList.find(item => item.id === id);
         
         if (existingItem) {
-            // If the product already exists in the cart, update the quantity
-            const updatedCartList = state.cartList.map(item =>
-                item.id === id
-                    ? { ...item, quantity: item.quantity + quantity }
-                    : item
-            );
-            
-            // Update local storage after modifying the cartList
-            localStorage.setItem("cartList", JSON.stringify(updatedCartList));
-            
-            return { cartList: updatedCartList };
-        } else {
-            // If the product is not in the cart, add it as a new item
+           return;
+        } 
             const updatedCartList = [...state.cartList, { id, quantity }];
-            
-            // Update local storage after adding the new item
+            set(() => ({
+            quantity: 1
+            }));
             localStorage.setItem("cartList", JSON.stringify(updatedCartList));
             
             return { cartList: updatedCartList };
-        }
     });
         
     },
@@ -51,8 +38,10 @@ export const createCartList = (set) => ({
         if (item.quantity >= stock) return item;
         return { ...item, quantity: item.quantity + 1 };
       });
+      set(() => ({
+            quantity: 1
+            }));
 
-      // Save updated cart to localStorage
       localStorage.setItem('cartList', JSON.stringify(updatedCart));
 
       return { cartList: updatedCart };
@@ -69,8 +58,10 @@ export const createCartList = (set) => ({
             return { ...item, quantity: item.quantity - 1 };
             })
             .filter((item) => item !== null);
-
-        // Save updated cart to localStorage
+            set(() => ({
+            quantity: 1
+            }));
+        
         localStorage.setItem('cartList', JSON.stringify(updatedCart));
 
         return { cartList: updatedCart };
@@ -81,7 +72,7 @@ export const createCartList = (set) => ({
     set((state) => {
       const updatedCart = state.cartList.filter((item) => item.id !== id);
 
-      // Save updated cart to localStorage
+     
       localStorage.setItem('cartList', JSON.stringify(updatedCart));
 
       return { cartList: updatedCart };
@@ -96,6 +87,9 @@ export const createCartList = (set) => ({
 
     clearCart: () => {
         set({ cartList: [] });
+        set(() => ({
+            quantity: 1
+        }));
         localStorage.removeItem("cartList");
     }
 });

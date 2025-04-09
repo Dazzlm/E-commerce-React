@@ -14,20 +14,10 @@ const AddQuantity = ({ productInformation }) => {
   function plusClick() {
     setQuantity(quantity + 1);
     addTotalQuantity(quantity + 1);
-    AddQuantity(item.id);
+    if (item) {
+      AddQuantity(item.id);
+    }
   }
-
-  //
-
-  // function handleClick() {
-  //   // Usamos una función para acceder al valor más reciente de `quantity`
-  //   setQuantity((prevQuantity) => {
-  //     const newQuantity = prevQuantity + 1;
-  //     addTotalQuantity(newQuantity); // Actualizamos la cantidad total aquí
-  //     AddQuantity(productInformation.id, newQuantity); // Usamos la nueva cantidad
-  //     return newQuantity; // Actualizamos el estado con la nueva cantidad
-  //   });
-  // }
 
   return (
     <div className={styles["div__counter"]}>
