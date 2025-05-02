@@ -12,7 +12,13 @@
       "../src/assets/images/image-product-3.jpg",
       "../src/assets/images/image-product-4.jpg"
     ],
-    "stock": 15
+    "stock": 15,
+    "colores": [
+      "red",
+      "blue",
+      "green"
+    ]
+    
   },
   {
     "id": 2,
@@ -27,7 +33,12 @@
       "https://m.media-amazon.com/images/I/81z4TTt3CJS._AC_SL1500_.jpg",
       "https://m.media-amazon.com/images/I/71V47usDmJL._AC_SL1500_.jpg"
     ],
-    "stock": 10
+    "stock": 10,
+    "colores": [
+      "orange",
+      "blue",
+      "green"
+    ]
   },
   {
     "id": 3,
@@ -42,7 +53,12 @@
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/de8b4d2d36b54c79ab58ad9000ecf1b4_9366/Tenis_Ultraboost_22_Negro_GX3062_03_standard.jpg",
       "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/6a05a71834504827b2e3ad9000fc7743_9366/Tenis_Ultraboost_22_Negro_GX3062_09_standard.jpg"
     ],
-    "stock": 16
+    "stock": 16,
+    "colores": [
+      "black",
+      "blue",
+      "white"
+    ]
   },
   {
     "id": 4,
@@ -57,7 +73,13 @@
       "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/374915/04/sv04/fnd/PNA/fmt/png/Tenis-Suede-Classic-XXI-Hombre",
       "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/374915/04/bv/fnd/PNA/fmt/png/Tenis-Suede-Classic-XXI-Hombre"
     ],
-    "stock": 10
+    "stock": 10,
+    "colores": [
+      "black",
+      "white",
+      "red"
+    ]
+
   },
   {
     "id": 5,
@@ -72,7 +94,12 @@
       "https://newbalance.com.co/cdn/shop/files/M990GL6-3.jpg?v=1726526441&width=493",
       "https://newbalance.com.co/cdn/shop/files/M990GL6-4.jpg?v=1726526441&width=493"
     ],
-    "stock": 5
+    "stock": 5,
+    "colores": [
+      "grey",
+      "blue",
+      "black"
+    ]
   },
   {
     "id": 6,
@@ -87,7 +114,12 @@
       "https://reebokcol.vtexassets.com/arquivos/ids/744409-1200-auto?v=638272140189870000&width=1200&height=auto&aspect=true",
       "https://reebokcol.vtexassets.com/arquivos/ids/744410-1200-auto?v=638272140193430000&width=1200&height=auto&aspect=true"
     ],
-    "stock": 9
+    "stock": 9,
+    "colores": [
+      "white",
+      "black",
+      "blue"
+    ]
   },
   {
     "id": 7,
@@ -102,7 +134,12 @@
       "https://vansco.vteximg.com.br/arquivos/ids/294406-450-450/VN000D3HY28-2.jpg?v=638754975997600000",
       "https://vansco.vteximg.com.br/arquivos/ids/296159-450-450/VN000D3HY28-4.jpg?v=638754975997770000"
     ],
-    "stock": 2
+    "stock": 2,
+    "colores": [
+      "black",
+      "white",
+      "red"
+    ]
   },
   {
     "id": 8,
@@ -117,7 +154,12 @@
       "https://www.converse.com/dw/image/v2/BJJF_PRD/on/demandware.static/-/Sites-cnv-master-catalog-we/default/dwb612ddf8/images/e_08/M9160_E_08X1.jpg?sw=406",
       "https://www.converse.com/dw/image/v2/BJJF_PRD/on/demandware.static/-/Sites-cnv-master-catalog-we/default/dw7c2d7105/images/f_08/M9160_F_08X1.jpg?sw=406"
     ],
-    "stock": 14
+    "stock": 14,
+    "colores": [
+      "black",
+      "green",
+      "red"
+    ]
   },
   {
     "id": 9,
@@ -132,7 +174,12 @@
       "https://i1.t4s.cz//products/3023017-604/under-armour-ua-hovr-phantom-2-333731-3023017-606-960.webp",
       "https://i1.t4s.cz//products/3023017-604/under-armour-ua-hovr-phantom-2-333731-3023017-608-960.webp"
     ],
-    "stock": 10
+    "stock": 10,
+    "colores": [
+      "black",
+      "blue",
+      "grey"
+    ]
   },
   {
     "id": 10,
@@ -147,6 +194,11 @@
       "https://www.sportlife.es/uploads/s1/10/00/64/23/saucony-ride-14-3.jpeg",
       "https://www.sportlife.es/uploads/s1/10/00/64/35/saucony-ride-14-2.jpeg"
     ],
-    "stock": 9
+    "stock": 9,
+    "colores": [
+      "blue",
+      "black",
+      "red"
+    ]
   }
 ]

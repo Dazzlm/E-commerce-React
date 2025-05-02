@@ -1,18 +1,21 @@
 import cart from "../../assets/images/icon-cart.svg";
 import styles from "./AddCart.module.css";
+import { useLocation } from "react-router-dom";
 import { useShoesStore } from "../../zustand/shoesStore";
 
 const AddCartButton = ({ productId }) => {
   const cartList = useShoesStore((state) => state.cartList);
   const addCart = useShoesStore((state) => state.addCart);
-
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const quantityURL = parseInt(queryParams.get("quantity")) || 1;
   const item = cartList.find((item) => item.id === productId);
   const quantity = useShoesStore((state) => state.quantity);
   const setQuantity = useShoesStore((state) => state.AddQuantity);
 
   const handleClick = () => {
     if (item === undefined) {
-      addCart(productId, quantity);
+      addCart(productId, quantityURL || quantity);
       setQuantity(1);
     }
   };

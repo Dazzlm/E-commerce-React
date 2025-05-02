@@ -68,3 +68,23 @@
     margin-top: 20px;
 
 }
+
+.div__ShowTextDetail--colorsContainer {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.colorSelector__dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border 0.2s ease;
+}
+
+.colorSelector__dot--selected {
+    border: 0px solid #000;
+    transform: scale(1.3);
+}
