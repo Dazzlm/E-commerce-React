@@ -1,6 +1,8 @@
 import styles from "./DescriptionDetail.module.css";
 import AddCartButton from "../add-cart-button/AddCartButton.jsx";
 import AddQuantity from "../quantity-button/AddQuantity.jsx";
+import { useState } from "react";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 
 export default function DescriptionDetail({ productInformation }) {
   return (
@@ -15,6 +17,18 @@ export default function DescriptionDetail({ productInformation }) {
   );
 }
 export function ShowTextDetail({ productInformation }) {
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const colorURL = queryParams.get("color") || null;
+  const quantityURL = parseInt(queryParams.get("quantity")) || 1;
+  const [colorSeleccionado, setColorSeleccionado] = useState(colorURL);
+  const prodQuntityURL = (newColor) => {
+    queryParams.set("color", newColor);
+    navigate(`/product/${id}?${queryParams.toString()}`);
+  };
+
   return (
     <div className={styles["div__ShowTextDetail"]}>
       <section className={styles["div__ShowTextDetail--marcaContainer"]}>
@@ -37,6 +51,20 @@ export function ShowTextDetail({ productInformation }) {
         >
           {productInformation.Descripcion}
         </p>
+      </section>
+      <section className={styles["div__ShowTextDetail--colorsContainer"]}>
+        {productInformation.colores.map((color, index) => (
+          <button
+            key={index}
+            className={`${styles["colorSelector__dot"]} ${
+              colorSeleccionado === color &&
+              styles["colorSelector__dot--selected"]
+            }`}
+            style={{ backgroundColor: color }}
+            onClick={() => (setColorSeleccionado(color), prodQuntityURL(color))}
+            aria-label={`Seleccionar color ${color}`}
+          />
+        ))}
       </section>
     </div>
   );

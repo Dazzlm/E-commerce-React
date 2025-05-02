@@ -3,21 +3,31 @@ import minusIcon from "../../assets/images/icon-minus.svg";
 import plusIcon from "../../assets/images/icon-plus.svg";
 import styles from "./AddQuantity.module.css";
 import { useShoesStore } from "../../zustand/shoesStore";
-
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 const AddQuantity = ({ productInformation }) => {
+  const navigate = useNavigate();
+  const { id } = useParams();
   const cartList = useShoesStore((state) => state.cartList);
   const AddQuantity = useShoesStore((state) => state.updateCartIncreace);
   const decQuantity = useShoesStore((state) => state.updateCartDecreace);
   const item = cartList.find((item) => item.id === productInformation.id);
-  const [quantity, setQuantity] = useState(item?.quantity || 1);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const quantityURL = parseInt(queryParams.get("quantity")) || 1;
+  const [quantity, setQuantity] = useState(item?.quantity || quantityURL || 1);
   const addTotalQuantity = useShoesStore((state) => state.AddQuantity);
   function plusClick() {
     setQuantity(quantity + 1);
+    prodQuntityURL(quantity + 1);
     addTotalQuantity(quantity + 1);
     if (item) {
       AddQuantity(item.id);
     }
   }
+  const prodQuntityURL = (cant) => {
+    queryParams.set("quantity", cant);
+    navigate(`/product/${id}?${queryParams.toString()}`);
+  };
 
   return (
     <div className={styles["div__counter"]}>
@@ -43,7 +53,9 @@ const AddQuantity = ({ productInformation }) => {
         }`}
         onClick={() => {
           decQuantity(productInformation.id);
-          setQuantity((prevQuantity) => prevQuantity - 1); // Decrementamos de forma similar
+          prodQuntityURL(quantity - 1);
+          setQuantity((prevQuantity) => prevQuantity - 1);
+          // Decrementamos de forma similar
         }}
         disabled={quantity <= 1}
       >
